@@ -13,7 +13,7 @@ Para gerar os gráficos, foi utilizando planilha do Google Drive apenas por prat
 
 O objetivo da análise era obter a média, de cata tipo de pokemon. Para isso, fez se necessário obter cada tipo e subtipo de todos os Pokemons. Para tal, utiliza-se a função `getType` abaixo: 
 
-```r=
+```r
 getType <- function(data) {
   vect <- c()
   for(v in data){
@@ -26,7 +26,7 @@ De forma bem simples, a função recebe como dado o vetor de tipos de todos os p
 
 Após obter todos os tipos e subtipos dos Pokemon, os dados do *dataset* serão processos na função `getStatsType` abaixo:
 
-```r=
+```r
 getStatsType <- function (types.1, types.2, data) {
   nameVect <- c()
   meanVect <- c()
