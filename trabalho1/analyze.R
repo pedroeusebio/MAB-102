@@ -24,15 +24,6 @@ getSizeType <- function(types, data) {
   return(lst)
 }
 
-comparator <- function( a, b) {
-  vect <- c()
-  for(i in 1:length(a)){
-    element <- a[i] && b[i]
-    vect <- c(vect, element)
-  }
-  return(vect)
-}
-
 getStatsType <- function (types.1, types.2, data) {
   size <- length(data$Name)
   lst <- list()
@@ -41,7 +32,7 @@ getStatsType <- function (types.1, types.2, data) {
       type <- paste(t1, t2, sep='-')
       element.1 <- data$Type.1 %in% t1 
       element.2 <- data$Type.2 %in% t2
-      element <- comparator(element.1, element.2)
+      element <- element.1 & element.2
       element <- data$HP[element]
       if(!is.nan(mean(element))){
         vect <- c(mean(element, trim = 0.3), median(element), getmode(element), max(element), min(element), length(element)) 
