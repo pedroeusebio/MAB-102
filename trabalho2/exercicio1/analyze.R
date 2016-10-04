@@ -1,6 +1,6 @@
 findZ <- function(mp, ms, sdp, n) {
   return (
-    (ms - mp) / (sdp * sqrt(n))
+    (ms - mp) / (sdp / sqrt(n))
   )
 }
 
@@ -37,9 +37,9 @@ n <- length(sample$tempo)
 alpha <- 0.05
 
 z <- findZ(mp, ms, sdp, n)
-
-p <- findP(z)
-
+print(z)
+p <- pnorm(z)
+print(p)
 #teste hipotese nula
 
 print(testH(p, alpha))
