@@ -51,12 +51,12 @@ expectedVect <- c(X_, W_, Y_, Z_)
 
 Xn <-  Reduce(sum, Map(findXn, observedVect, expectedVect))
 
-pValue <- pchisq(Xn, phi)
+pValue <-  1- pchisq(Xn, phi)
 
 #H0: amostras da mesma distribuicao
 #H1: amostras de distribuicao mesmo
 
+print(Xn)
+print(pValue)
 print(checkPValue(pValue, alpha));
-
-
 
