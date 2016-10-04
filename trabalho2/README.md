@@ -65,11 +65,11 @@ o Z encontrado foi de $$ Z = 23.35878 $$. Para esse valor, o p-valor foi de $$ 1
 
 ### Enunciado
 
-Uma métrica comum em sites de e-commerce é o número de clicks que um usuário efetua durante a navegação. Um grupo de marketing quer fazer uma campanha de um novo produto, entretanto não sabe se apresenta ele apenas na página ou como um pop-up, que toma a conta de toda a tela. Visando responder esse problema, dois grupos foram selecionados. Para o primeiro grupo, foi apresentado apenas a tela com o produto. Para o segundo, foi apresentado a tela com o pop-up.
-Utilize técnicas estatísticas para informar se faz diferença utilizar o pop-up ou não.
-Arquivos:
-amostra_A_click.csv
-amostra_B_click.csv
+* Uma métrica comum em sites de e-commerce é o número de clicks que um usuário efetua durante a navegação. Um grupo de marketing quer fazer uma campanha de um novo produto, entretanto não sabe se apresenta ele apenas na página ou como um pop-up, que toma a conta de toda a tela. Visando responder esse problema, dois grupos foram selecionados. Para o primeiro grupo, foi apresentado apenas a tela com o produto. Para o segundo, foi apresentado a tela com o pop-up.
+* Utilize técnicas estatísticas para informar se faz diferença utilizar o pop-up ou não.
+    * Arquivos:
+        * amostra_A_click.csv
+        * amostra_B_click.csv
 
 
 ## Solução
