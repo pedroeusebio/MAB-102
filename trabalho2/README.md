@@ -32,3 +32,25 @@ sample <- read.csv("amostra_tempo.csv", header = TRUE, sep = ";")
 population <- read.csv("populacao_tempo.csv", header = TRUE, sep = ";")
 ```
 
+Para o cálculo das médias, foi utilizado as funções da própria linguagem. A função `mean()` faz o cálculo da média de um vetor, já a função `sd()` faz o cálculo do desvio padrão de um vetor e a função `length()` retorna o tamanho do vetor passado como parametros, como pode ser visto abaixo :
+
+```r
+# media e desvio padrao populacional
+mp <- mean(population$tempo)
+sdp <- sd(population$tempo)
+N <- length(population$tempo)
+```
+Esses mesmos cálculos foram realizados para as amostras, afim de obter o cálculo da estatística Z. Para isso, foi utilizado a função `findZ()` que recebe 4 parametros : 
+* mp: média populacional
+* ms: média amostral
+* sdp: desvio padrão populacional
+* n: tamanho da amostra
+
+```{r}
+findZ <- function(mp, ms, sdp, n) {
+  return (
+    (ms - mp) / (sdp * sqrt(n))
+  )
+}
+``` 
+Após o calculo da estatistica Z, o resultado foi utilizado para calcular o p-valor que será comparado para verificar a hipotese nula.
