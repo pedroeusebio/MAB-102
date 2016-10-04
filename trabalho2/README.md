@@ -54,3 +54,9 @@ findZ <- function(mp, ms, sdp, n) {
 }
 ``` 
 Após o calculo da estatistica Z, o resultado foi utilizado para calcular o p-valor que será comparado para verificar a hipotese nula.
+
+Para o cálculo do p-valor, pode-se utilizar a função `pnorm()` que retornará o p-valor de acordo com Z.
+
+o Z encontrado foi de $$ Z = 23.35878 $$. Para esse valor, o p-valor foi de $$ 1.0 $$, sendo assim se compararmos com o nivel de significância ($$0.05$$), perceberemos que a hipótese nula é falsa, ou seja, a distribuição das amostras da *feature* não pertencem a mesma distribuição da população e como o p-valor é positivo, deve ser adotado, pois terá um retorno financeiro maior.
+
+
