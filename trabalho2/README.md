@@ -22,4 +22,11 @@ Para demonstrar que o play automático de vídeos realmente aumentou os usuário
 
 Para isso, foi feito o teste de hipótese, sendo a hipótese nula as amostras pertencem a mesma distribuição e a hipótese H1 as amostras não pertencem a mesma distribuição.
 
+### Procedimentos
 
+para obter os dados de cada .csv foi realizado o seguinte código:
+
+```r
+sample <- read.csv("amostra_tempo.csv", header = TRUE, sep = ";")population <- read.csv("populacao_tempo.csv", header = TRUE, sep = ";")
+
+```
