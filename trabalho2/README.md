@@ -88,6 +88,26 @@ Para a utilização do teste do Qui-Quadrado para duas amostras, foi necessário
     * Grupo 1 : click_on = "yes"
     * Grupo 2 : click_on = "no"
 
+Em código :
+
+```{r}
+sampleAG1 <- sampleA$click_on[sampleA$click_on == "yes"];
+sampleAG2 <- sampleA$click_on[sampleA$click_on == "no"];
+
+sampleBG1 <- sampleB$click_on[sampleB$click_on == "yes"];
+sampleBG2 <- sampleB$click_on[sampleB$click_on == "no"];
+
+#Tabela Observada
+X <- length(sampleAG1);
+W <- length(sampleAG2);
+Y <- length(sampleBG1);
+Z <- length(sampleBG2);
+G1 <- sum(X, Y);
+G2 <- sum(W, Z);
+CA <- sum(X, W);
+CB <- sum(Y, Z);
+T <- sum(X, W, Y, Z);
+```
 
 
 
