@@ -40,7 +40,9 @@ mp <- mean(population$tempo)
 sdp <- sd(population$tempo)
 N <- length(population$tempo)
 ```
-Esses mesmos cálculos foram realizados para as amostras, afim de obter o cálculo da estatística Z. Para isso, foi utilizado a função `findZ()` que recebe 4 parametros : 
+
+Esses mesmos cálculos foram realizados para as amostras, afim de obter o cálculo da estatística Z. Para isso, foi utilizado a função `findZ()` que recebe 4 parametros :
+
 * mp: média populacional
 * ms: média amostral
 * sdp: desvio padrão populacional
@@ -52,14 +54,15 @@ findZ <- function(mp, ms, sdp, n) {
     (ms - mp) / (sdp * sqrt(n))
   )
 }
-``` 
+```
+
 Após o calculo da estatistica Z, o resultado foi utilizado para calcular o p-valor que será comparado para verificar a hipotese nula.
 
 Para o cálculo do p-valor, pode-se utilizar a função `pnorm()` que retornará o p-valor de acordo com Z.
 
-o Z encontrado foi de $$ Z = 23.35878 $$. Para esse valor, o p-valor foi de $$ 1.0 $$, sendo assim se compararmos com o nivel de significância ($$0.05$$), perceberemos que a hipótese nula é falsa, ou seja, a distribuição das amostras da *feature* não pertencem a mesma distribuição da população e como o p-valor é positivo, deve ser adotado, pois terá um retorno financeiro maior.
+o Z encontrado foi de $$ Z = 23.35878 $$. Para esse valor, o p-valor foi de $$ 1.0 $$, sendo assim se compararmos com o nivel de significância \($$0.05$$\), perceberemos que a hipótese nula é falsa, ou seja, a distribuição das amostras da _feature_ não pertencem a mesma distribuição da população e como o p-valor é positivo, deve ser adotado, pois terá um retorno financeiro maior.
 
-**Os arquivos dos dados, assim como o código utilizado para realizar o teste de hipótese, podem ser encontras nesse [link](https://github.com/pedroeusebio/MAB-102/tree/master/trabalho2/exercicio1).**
+**Os arquivos dos dados, assim como o código utilizado para realizar o teste de hipótese, podem ser encontras nesse ****[link](https://github.com/pedroeusebio/MAB-102/tree/master/trabalho2/exercicio1)****.**
 
 ## Clicks do Site
 
@@ -67,26 +70,32 @@ o Z encontrado foi de $$ Z = 23.35878 $$. Para esse valor, o p-valor foi de $$ 1
 
 * Uma métrica comum em sites de e-commerce é o número de clicks que um usuário efetua durante a navegação. Um grupo de marketing quer fazer uma campanha de um novo produto, entretanto não sabe se apresenta ele apenas na página ou como um pop-up, que toma a conta de toda a tela. Visando responder esse problema, dois grupos foram selecionados. Para o primeiro grupo, foi apresentado apenas a tela com o produto. Para o segundo, foi apresentado a tela com o pop-up.
 * Utilize técnicas estatísticas para informar se faz diferença utilizar o pop-up ou não.
-    * Arquivos:
-        * amostra_A_click.csv
-        * amostra_B_click.csv
+  * Arquivos:
+    * amostra\_A\_click.csv
+    * amostra\_B\_click.csv
+
 
 
 ### Solução
 
-O execício propõe que, dado duas amostras, verifiquemos se ambas são da mesma população. Em outras palavras, se as duas amostras forem da mesma população significa que não existe diferença no número de cliques em relação ao tipo de exibição (com pop-up ou apenas na página). Caso não sejam da mesma população significa que existe uma diferença entre as amostras e uma das duas opções é a ideal para ser utilizada( a que proporcional mais clicks).
+O execício propõe que, dado duas amostras, verifiquemos se ambas são da mesma população. Em outras palavras, se as duas amostras forem da mesma população significa que não existe diferença no número de cliques em relação ao tipo de exibição \(com pop-up ou apenas na página\). Caso não sejam da mesma população significa que existe uma diferença entre as amostras e uma das duas opções é a ideal para ser utilizada\( a que proporcional mais clicks\).
 
 Dessa maneira, para solução do exercício, foi utilizado o teste do Qui-Quadrado para duas amostras. Tem-se como hipótese nula que as amostras são da mesma população e como hipótese alternativa que as amostras não fazem parte da mesma população.
 
 ### Método de Solução
 
 Para a utilização do teste do Qui-Quadrado para duas amostras, foi necessário dividir os dados em dois grupos e duas classes :
+
 * Classes:
-    * Classe A : [Amostra A](https://github.com/pedroeusebio/MAB-102/blob/master/trabalho2/exercicio2/amostra_A_click.csv)
-    * Classe B : [Amostra B](https://github.com/pedroeusebio/MAB-102/blob/master/trabalho2/exercicio2/amostra_B_click.csv)
+
+  * Classe A : [Amostra A](https://github.com/pedroeusebio/MAB-102/blob/master/trabalho2/exercicio2/amostra_A_click.csv)
+  * Classe B : [Amostra B](https://github.com/pedroeusebio/MAB-102/blob/master/trabalho2/exercicio2/amostra_B_click.csv)
+
 * Grupos:
-    * Grupo 1 : click_on = "yes"
-    * Grupo 2 : click_on = "no"
+
+  * Grupo 1 : click\_on = "yes"
+  * Grupo 2 : click\_on = "no"
+
 
 Em código :
 
@@ -108,8 +117,68 @@ CA <- sum(X, W);
 CB <- sum(Y, Z);
 T <- sum(X, W, Y, Z);
 ```
+Com o código acima podemos gerar a tabela abaixo :
+
+|  -      | Classe A | Class B | Total |
+|:--------|:--------:|:-------:|:-----:|
+| Grupo 1 | X        | Y       | G1    |
+| Grupo2  | W        | Z       | G2    |
+| Total   | CA       | CB      | T     |
 
 
+Para gerar a tabela esperada foi utilizado o código abaixo:
+
+```{r}
+#Tabela Esperada
+
+X_ <- (G1 * CA) / T;
+W_ <- (G2 * CA) / T;
+Y_ <- (G1 * CB) / T;
+Z_ <- (G2 * CB) / T;
+```
+
+Com o código acima, podemos obter a tabela abaixo de valores esperados :
+
+|-        | Classe A | Classe B|
+|---------|:--------:|:-------:|
+| Grupo 1 | X_       | Y_      |
+| Grupo 2 | W_       | Z_      |
+
+Para obter o grau de liberdade, a função `findPhi()` foi utilizada. Passa-se como parametros o número de colunas e linhas que a tabela Observada possui.
+
+```{r}
+findPhi <- function(lines, columns) {
+  return ((lines - 1) * (columns - 1))
+}
+
+```
+
+Tendo esses dados, pode calcular o valor de X<sup>2</sup><sub>n</sub>. Para esse cálculo, foi criado a função abaixo :
+
+```{r}
+findXn <- function (o, e) {
+  return (
+    (o - e) ** 2 / e
+  )
+}
+
+```
+O valor de 'o' é um valor da tabela observada e 'e' é um valor da tabela esperada. Para calcular cada valor, cria-se 2 vetor, um com todos os valores da tabela observada, e outro com todos os valores da tabela observada. Aplica-se um Map em ambos vetores e for fim faz-se um `Reduce` aplicando a soma no vetor retornado pelo `Map()`, como pode ser visto no código abaixo:
+
+```{r}
+observedVect <- c(X, W, Y, Z)
+expectedVect <- c(X_, W_, Y_, Z_)
+
+Xn <-  Reduce(sum, Map(findXn, observedVect, expectedVect))
+
+```
+
+Com o valor de X<sup>2</sup><sub>n</sub> e do grau de liberdade, calcula-se o p-valor para ser comparado com o nivel de significância :
+
+```{r}
+pValue <- 1- pchisq(Xn, phi)
+```
+Caso seja p-valor maior que alpha
 
 
 
