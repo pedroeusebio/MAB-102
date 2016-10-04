@@ -178,7 +178,15 @@ Com o valor de X<sup>2</sup><sub>n</sub> e do grau de liberdade, calcula-se o p-
 ```{r}
 pValue <- 1- pchisq(Xn, phi)
 ```
-Caso seja p-valor maior que alpha
+Caso seja p-valor maior que alpha ($$\alpha$$) a hipótese nula não deve ser rejeitada, caso ao contrário, a hipótese nula deve ser rejeitada e a hipótese alternativa deve ser levada em consideração. 
+
+De acordo com os cálculos acima, o p-valor deu aproximadamente 13.2939, o grau de liberdade ($$\phi$$) igual a 2, gerando assim o p-valor de 0.0002662709. Como o p-valor é menor que o nível de significância ($$\alpha = 0.05$$), então a hipótese nula foi descartada.
+
+O gráfico abaixo, mostra a diferença entre os clicks produzido pela tela sem pop-up e com pop-up. Dessa maneira, é possível perceber que a amostra A proporcionou o maior numero de clicks.
+
+![](/assets/Plot 6.png)
+
+
 
 
 
