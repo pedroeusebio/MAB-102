@@ -23,7 +23,7 @@ Para demonstrar que o play automático de vídeos realmente aumentou os usuário
 
 Para isso, foi feito o teste de hipótese, sendo a hipótese nula as amostras pertencem a mesma distribuição e a hipótese H1 as amostras não pertencem a mesma distribuição.
 
-### Procedimentos
+### Método de Solução
 
 para obter os dados de cada .csv foi realizado o seguinte código:
 
@@ -72,4 +72,44 @@ o Z encontrado foi de $$ Z = 23.35878 $$. Para esse valor, o p-valor foi de $$ 1
         * amostra_B_click.csv
 
 
-## Solução
+### Solução
+
+O execício propõe que, dado duas amostras, verifiquemos se ambas são da mesma população. Em outras palavras, se as duas amostras forem da mesma população significa que não existe diferença no número de cliques em relação ao tipo de exibição (com pop-up ou apenas na página). Caso não sejam da mesma população significa que existe uma diferença entre as amostras e uma das duas opções é a ideal para ser utilizada( a que proporcional mais clicks).
+
+Dessa maneira, para solução do exercício, foi utilizado o teste do Qui-Quadrado para duas amostras. Tem-se como hipótese nula que as amostras são da mesma população e como hipótese alternativa que as amostras não fazem parte da mesma população.
+
+### Método de Solução
+
+Para a utilização do teste do Qui-Quadrado para duas amostras, foi necessário dividir os dados em dois grupos e duas classes :
+* Classes:
+    * Classe A : [Amostra A](https://github.com/pedroeusebio/MAB-102/blob/master/trabalho2/exercicio2/amostra_A_click.csv)
+    * Classe B : [Amostra B](https://github.com/pedroeusebio/MAB-102/blob/master/trabalho2/exercicio2/amostra_B_click.csv)
+* Grupos:
+    * Grupo 1 : click_on = "yes"
+    * Grupo 2 : click_on = "no"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
