@@ -43,3 +43,12 @@ print(p)
 #teste hipotese nula
 
 print(testH(p, alpha))
+
+
+sampleDensities <- dnorm(sort(sample$tempo), mean=ms, sd=sds)
+populationDensities <- dnorm(sort(population$tempo), mean=mp, sd=sdp)
+
+plot(sort(population$tempo), populationDensities, col='gold', xlab="", ylab="Density", type="l",lwd=2, cex=2, main="PDF of samples Normal")
+lines(sort(sample$tempo), sampleDensities, col='darkgreen')
+legend("topright", title="Distributions", c('Population', 'Sample'), col=c('gold', 'darkgreen'), lty= c(1,1))
+
