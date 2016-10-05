@@ -2,7 +2,7 @@ getAllNotNull <- function(v) {
   return (!is.na(v))
 }
 
-getCurrelation <- function(imdb_score, data, dataNotNull) {
+getCorrelation <- function(imdb_score, data, dataNotNull) {
   name <- names(data)
   allCor <- c()
   collName <- c()
@@ -20,7 +20,7 @@ data <- read.csv("movie_metadata.csv", header = TRUE, sep = ",")
 # getting all not null data)
 dataNotNull <- Map(getAllNotNull, data)
 # returning all correletion from all numeric columns
-result <- getCurrelation(data$imdb_score, data, dataNotNull)
+result <- getCorrelation(data$imdb_score, data, dataNotNull)
 
 # get higher value
 sortedCor <- sort(result$correlation, index.return = TRUE, decreasing = TRUE)
