@@ -190,6 +190,22 @@ O gráfico abaixo, mostra a diferença entre os clicks produzido pela tela sem p
 
 
 
+## Produtor de Cinema
+
+### Enunciado
+
+* Um produtor acredita que deve-se construir um poster para um filme utilizando a maior quantidade de atores possíveis. O fato se deve a uma correlação existente entre a nota no IMDB (imdb_score) e o número de faces existentes nos posters (facenumber_in_poster).
+
+* Verifique a existência dessa correlação e tente ajudar o produtor a conseguir o melhor imdb_score possível.
+
+* Arquivo:
+    * movie_metadata.csv
+
+### Solução
+
+### Método de Solução
+
+
 
 
 
