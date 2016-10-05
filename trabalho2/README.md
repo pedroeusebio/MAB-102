@@ -208,7 +208,7 @@ O gráfico abaixo, mostra a diferença entre os clicks produzido pela tela sem p
 
 
 
-
+![](/assets/Plot 7.png)
 
 
 
