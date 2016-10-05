@@ -62,7 +62,7 @@ Para o cálculo do p-valor, pode-se utilizar a função `pnorm()` que retornará
 
 o Z encontrado foi de $$ Z = 23.35878 $$. Para esse valor, o p-valor foi de $$ 1.0 $$, sendo assim se compararmos com o nivel de significância \($$0.05$$\), perceberemos que a hipótese nula é falsa, ou seja, a distribuição das amostras da _feature_ não pertencem a mesma distribuição da população e como o p-valor é positivo, deve ser adotado, pois terá um retorno financeiro maior.
 
-**Os arquivos dos dados, assim como o código utilizado para realizar o teste de hipótese, podem ser encontras nesse ****[link](https://github.com/pedroeusebio/MAB-102/tree/master/trabalho2/exercicio1)****.**
+**Os arquivos dos dados, assim como o código utilizado para realizar o teste de hipótese, podem ser encontras nesse [link](https://github.com/pedroeusebio/MAB-102/tree/master/trabalho2/exercicio1).**
 
 ## Clicks do Site
 
@@ -186,9 +186,7 @@ O gráfico abaixo, mostra a diferença entre os clicks produzido pela tela sem p
 
 ![](/assets/Plot 6.png)
 
-
-
-
+**Os arquivos dos dados, assim como o código utilizado para realizar o teste de hipótese, podem ser encontras nesse [link](https://github.com/pedroeusebio/MAB-102/tree/master/trabalho2/exercicio2)**.
 
 ## Produtor de Cinema
 
@@ -246,6 +244,8 @@ sortedCor <- sort(result$correlation, index.return = TRUE, decreasing = TRUE)
 O gráfico abaixo é a exibição do vetor de correlações ordenados de forma decrescente, então, podemos perceber que o num_voted_users é o que possui maior correlação com imdb_score, diferentemente do facenumber_in_poster que é o segundo mais baixo.
 
 ![](/assets/Plot 7.png)
+
+**Os arquivos dos dados, assim como o código utilizado para realizar o teste de hipótese, podem ser encontras nesse [link](https://github.com/pedroeusebio/MAB-102/tree/master/trabalho2/exercicio3)**.
 
 
 
