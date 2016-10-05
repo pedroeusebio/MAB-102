@@ -207,6 +207,39 @@ O exercício tinha como princípio a utilização da correlação de Pearson par
 
 ### Método de Solução
 
+Inicialmente, foi necessário realizar um tratamento dos dados, removendo todos as linhas da tabela do .csv que não possuiam algum dado. Para isso, a função `is.na()` foi utilizada para verificar os valores dos dados.
+
+```{r}
+getAllNotNull <- function(v) {
+  return (!is.na(v))
+}
+
+```
+A função acima, foi utilizada para tratar os dados. A função `is.na()` retorna `TRUE` para caso o valor seja esteja sendo avaliado seja um `NaN`. Dessa maneira, a função `getAllNotNull` recebe um data.frame dos dados do .csv e retorna um data.frame da mesma dimensão de parametro contendo vetores com valores booleanos, que representam se aquele valor é `NaN` ou não.
+
+Tendo esses dados tratados, a função `getCorrelation()` é utilizada para criar um data.frame contendo duas colunas : 
+* Name : que contem o nome do atributo dos filmes
+* Correlation :  que contem os valores de correlação de cada atributo.
+
+```{r}
+getCorrelation <- function(imdb_score, data, dataNotNull) {
+  name <- names(data)
+  allCor <- c()
+  collName <- c()
+  for(row in 1:length(data)){
+    if(is.numeric(data[[row]][dataNotNull[[row]]][1]) & name[row] != 'imdb_score') {
+      collName <- c(collName, name[row])
+      allCor <- c(allCor, cor(imdb_score[dataNotNull[[row]]], data[[row]][dataNotNull[[row]]], use = "everything", method = "pearson"))
+    }
+  }
+  return( data.frame( "name" = collName, "correlation" = allCor))
+}
+```
+De maneira bem simples, a função faz uma iteração para cada atributo de filmes, filtrando todos os dados que são numéricos e que não é o imdb_score. Para cada atributo, calcula-se a correlação de Pearson e adiciona esse valor em um vetor `allCor`, além de adicionar em outro vetor `collName` o nome do atributo que foi calculado. 
+
+Após essa etapa, ordena-se os resultados da correlação em ordem decrescente e escolhe o primeiro para retorna como maior correlação entre imbdb_score.
+
+
 
 
 
