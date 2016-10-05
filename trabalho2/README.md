@@ -62,6 +62,10 @@ Para o cálculo do p-valor, pode-se utilizar a função `pnorm()` que retornará
 
 o Z encontrado foi de $$ Z = 23.35878 $$. Para esse valor, o p-valor foi de $$ 1.0 $$, sendo assim se compararmos com o nivel de significância \($$0.05$$\), perceberemos que a hipótese nula é falsa, ou seja, a distribuição das amostras da _feature_ não pertencem a mesma distribuição da população e como o p-valor é positivo, deve ser adotado, pois terá um retorno financeiro maior.
 
+O gráfico abaixo mostra a distribuição normal dos dados da População( em amarelo) e os dados da amostra( em verde). 
+
+![](/assets/Rplots-1.png)
+
 **Os arquivos dos dados, assim como o código utilizado para realizar o teste de hipótese, podem ser encontras nesse [link](https://github.com/pedroeusebio/MAB-102/tree/master/trabalho2/exercicio1).**
 
 ## Clicks do Site
