@@ -203,6 +203,8 @@ O gráfico abaixo, mostra a diferença entre os clicks produzido pela tela sem p
 
 ### Solução
 
+O exercício tinha como princípio a utilização da correlação de Pearson para encontrar qual dos atributos dos filmes tem mais relação com a nota no IMDB. Para isso foi utilizada a função nativa `cor()` para calcular a correlação dos dados.
+
 ### Método de Solução
 
 
