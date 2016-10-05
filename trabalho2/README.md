@@ -239,9 +239,11 @@ De maneira bem simples, a função faz uma iteração para cada atributo de film
 
 Após essa etapa, ordena-se os resultados da correlação em ordem decrescente e escolhe o primeiro para retorna como maior correlação entre imbdb_score.
 
+```{r}
+sortedCor <- sort(result$correlation, index.return = TRUE, decreasing = TRUE)
+```
 
-
-
+O gráfico abaixo é a exibição do vetor de correlações ordenados de forma decrescente, então, podemos perceber que o num_voted_users é o que possui maior correlação com imdb_score, diferentemente do facenumber_in_poster que é o segundo mais baixo.
 
 ![](/assets/Plot 7.png)
 
